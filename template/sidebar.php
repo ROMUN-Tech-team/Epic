@@ -14,7 +14,7 @@
                 <h2>Menu</h2>
             </header>
             <ul>
-                <li><a href="index.php">Homepage</a></li>
+                <li><a href="index.php">主页</a></li>
                 <li>
                     <span class="opener">Self Media</span>
                     <ul>
@@ -41,7 +41,7 @@
                     <?php
                 } else {
                     ?>
-                    <li><a href="login.php">Login</a></li>
+                    <li><a href="login.php">登录</a></li>
                     <?php
                 }
                 ?>
@@ -52,18 +52,18 @@
         <!-- Section -->
         <section>
             <header class="major">
-                <h2>Get in touch</h2>
+                <h2>联系我们</h2>
             </header>
-            <p>Get in touch with us in following ways</p>
+            <p>用一下几种方式联系我们</p>
             <ul class="contact">
-                <li class="icon solid fa-envelope"><a href="mailto:musdatech@gmail.com">musdatech@gmail.com</a></li>
-                <li class="icon solid fa-phone">+1 (646) 707-6558</li>
+                <li class="icon solid fa-envelope"><a href="mailto"></a></li>
+                <li class="icon solid fa-phone">+1 (646) 707-</li>
             </ul>
         </section>
 
         <!-- Footer -->
         <footer id="footer">
-            <p class="copyright">Copyright &copy; 2015-2019 <a href="https://www.mcpe.name">Syndicate Develop Team.</a>
+            <p class="copyright">Copyright &copy; 2015-2020 <a href="https://www.mcpe.name">Syndicate Develop Team.</a>
                 All rights reserved.</p>
         </footer>
 

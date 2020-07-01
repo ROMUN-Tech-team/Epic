@@ -6,7 +6,7 @@
 -->
 <html lang="en">
 <head>
-    <title>Login - <?php require_once("template/title.php"); ?></title>
+    <title>登录 - <?php require_once("template/title.php"); ?></title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
@@ -29,10 +29,10 @@
             <form id="login" method="post" action="#" onsubmit="return false">
                 <div class="row gtr-uniform">
                     <div class="col-12 col-12-xsmall">
-                        <input type="text" name="account" id="account" value="" placeholder="Account"/>
+                        <input type="text" name="account" id="account" value="" placeholder="Aster id"/>
                     </div>
                     <div class="col-12 col-12-xsmall">
-                        <input type="password" name="password" id="password" value="" placeholder="Password"/>
+                        <input type="password" name="password" id="password" value="" placeholder="密码"/>
                     </div>
 
                     <p id="tip_text" style="color:red;"></p>

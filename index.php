@@ -6,7 +6,7 @@
 -->
 <html lang="en">
 <head>
-    <title>Homepage - <?php require_once("template/title.php");
+    <title>主页 - <?php require_once("template/title.php");
         session_start();
         ?></title>
     <meta charset="utf-8"/>

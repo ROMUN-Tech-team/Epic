@@ -38,12 +38,12 @@ while ($row = mysqli_fetch_array($result)) {
         </header>
         <p><?php echo $dbsummary; ?></p>
         <p>Language：<?php if ($dblang == "CN") {
-                echo "Chinese";
+                echo "中文";
             } elseif ($dblang == "EN") {
                 echo "English";
             }; ?></p>
         <ul class="actions">
-            <li><a href="article.php?id=<?php echo $dbid; ?>" class="button big">More</a></li>
+            <li><a href="article.php?id=<?php echo $dbid; ?>" class="button big">了解更多</a></li>
         </ul>
     </div>
     <span class="image object">

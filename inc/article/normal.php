@@ -24,7 +24,7 @@ $result = mysqli_query($con, "select * from article order by count DESC LIMIT 10
 
 <section>
     <header class="major">
-        <h2>News List</h2>
+        <h2>新闻列表</h2>
     </header>
     <div class="posts">
         <?php
@@ -39,7 +39,7 @@ $result = mysqli_query($con, "select * from article order by count DESC LIMIT 10
             $dblang = $row["lang"];
 
             if ($dblang == "CN") {
-                $dblang = "Chinese";
+                $dblang = "中文";
             } elseif ($dblang == "EN") {
                 $dblang = "English";
             };
@@ -50,9 +50,9 @@ $result = mysqli_query($con, "select * from article order by count DESC LIMIT 10
             <a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
             <h3>{$dbtitle}</h3>
             <p>{$dbsummary}</p>
-            <p>Language：{$dblang}</p>
+            <p>语言：{$dblang}</p>
             <ul class="actions">
-                <li><a href="news/{$dbid}" class="button">More</a></li>
+                <li><a href="article.php?id={$dbid}" class="button">More</a></li>
             </ul>
         </article>
 
