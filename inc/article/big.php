@@ -3,7 +3,7 @@
 include("inc/config.php");
 
 if (!$con) {
-    die('数据库连接失败' . mysqli_connect_error());
+    die('数据库连接失败' . mysqli_error($con));
 }
 
 $dbid = null;
@@ -37,13 +37,13 @@ while ($row = mysqli_fetch_array($result)) {
             <p><?php echo $dbsubtitle; ?></p>
         </header>
         <p><?php echo $dbsummary; ?></p>
-        <p>稿件语言：<?php if ($dblang == "CN") {
-                echo "中文";
+        <p>Language：<?php if ($dblang == "CN") {
+                echo "Chinese";
             } elseif ($dblang == "EN") {
                 echo "English";
             }; ?></p>
         <ul class="actions">
-            <li><a href="news/<?php echo $dbid; ?>.html" class="button big">了解更多</a></li>
+            <li><a href="news/<?php echo $dbid; ?>.html" class="button big">More</a></li>
         </ul>
     </div>
     <span class="image object">

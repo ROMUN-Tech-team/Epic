@@ -1,5 +1,5 @@
 <?php
 
-$title = "Epic";
+$title = "Syndicate Media Center";
 
 echo $title;

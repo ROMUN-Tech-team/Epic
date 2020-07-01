@@ -6,7 +6,7 @@
 -->
 <html lang="en">
 <head>
-    <title>编辑文章 - <?php require_once("template/title.php"); ?></title>
+    <title>Editor - <?php require_once("template/title.php"); ?></title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
@@ -30,19 +30,19 @@
             <br><br>
 
 
-            <h3>编辑</h3>
+            <h3>Editor</h3>
 
 
             <form method="post" action="#" id="form" onsubmit="return enter()">
                 <div class="row gtr-uniform">
                     <div class="col-6 col-12-xsmall">
-                        <input type="text" name="title" id="title" value="" placeholder="标题"/>
+                        <input type="text" name="title" id="title" value="" placeholder="Title"/>
                     </div>
                     <div class="col-6 col-12-xsmall">
-                        <input type="text" name="subtitle" id="subtitle" value="" placeholder="副标题"/>
+                        <input type="text" name="subtitle" id="subtitle" value="" placeholder="Subtitle"/>
                     </div>
                     <div class="col-12 col-12-xsmall">
-                        <textarea name="summary" id="summary" value="" placeholder="总结" rows="3"></textarea>
+                        <textarea name="summary" id="summary" value="" placeholder="Summary" rows="3"></textarea>
                     </div>
 
                     <!-- Break -->
@@ -50,9 +50,9 @@
 
                     <div class="col-12">
                         <select name="lang" id="lang">
-                            <option value="">- 语言 -</option>
-                            <option value="CN">中文</option>
-                            <option value="EN">英语</option>
+                            <option value="">- Language -</option>
+                            <option value="CN">Chinese</option>
+                            <option value="EN">English</option>
                         </select>
                     </div>
 
@@ -89,36 +89,48 @@
 <script src="assets/js/main.js"></script>
 
 <script type="text/javascript">
-    $("#submit").attr('value', '发布');
+
+
+    $("#submit").attr('value', 'Post');
+
     var tip = $('#tip_text');
     tip.text('');
 
     function enter() {
+
         var title = document.getElementById("title").value;//获取form中的用户名
         var subtitle = document.getElementById("subtitle").value;
         var summary = document.getElementById("summary").value;
         var lang = document.getElementById("lang").value;
         var article = document.getElementById("article").value;
+
+
         if (title.length == 0) {
-            alert("请填写标题");
+            alert("Please filled the title");
             return false;
         }
+
         if (subtitle.length == 0) {
-            alert("请填写副标题");
+            alert("Please filled the subtitle");
             return false;
         }
+
         if (summary.length == 0) {
-            alert("请填写总结");
+            alert("Please filled the summary");
             return false;
         }
+
         if (lang.length == 0) {
-            alert("请选择语言");
+            alert("Please choose the language");
             return false;
         }
+
         if (article.length == 0) {
-            alert("请填写内容");
+            alert("Please filled the article");
             return false;
         }
+
+
         $("#submit").val('Posting');
         //向后台发送处理数据
         $.ajax({
@@ -128,17 +140,22 @@
             data: $('#form').serialize(),
             success: function (msg) {
                 if (msg == 1) {
-                    $("#submit").val('发布');
-                    tip.text('请输入全部信息!');
+                    $("#submit").val('Post');
+                    tip.text('Please filled all the content!');
+
                 } else if (msg == 2) {
-                    $("#submit").val('发布');
+
+                    $("#submit").val('Post');
                     window.location.href = 'index.php';
+
                 } else if (msg == 3) {
-                    $("#submit").val('发布');
-                    tip.text('数据库故障!');
+                    $("#submit").val('Post');
+                    tip.text('Database is down!');
+
                 }
             }
         });
+
         return false;
     }
 </script>

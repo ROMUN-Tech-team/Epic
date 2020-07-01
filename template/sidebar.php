@@ -4,24 +4,24 @@
         <!-- Search -->
         <section id="search" class="alt">
             <form method="post" action="#">
-                <input type="text" name="query" id="query" placeholder="搜索"/>
+                <input type="text" name="query" id="query" placeholder="Search"/>
             </form>
         </section>
 
         <!-- Menu -->
         <nav id="menu">
             <header class="major">
-                <h2>菜单</h2>
+                <h2>Menu</h2>
             </header>
             <ul>
-                <li><a href="index.php">主页</a></li>
+                <li><a href="index.php">Homepage</a></li>
                 <li>
-                    <span class="opener">自媒体</span>
+                    <span class="opener">Self Media</span>
                     <ul>
-                        <li><a href="#">英国</a></li>
-                        <li><a href="#">美国</a></li>
-                        <li><a href="#">俄罗斯</a></li>
-                        <li><a href="#">中国</a></li>
+                        <li><a href="#">England</a></li>
+                        <li><a href="#">America</a></li>
+                        <li><a href="#">Russia</a></li>
+                        <li><a href="#">China</a></li>
                     </ul>
                 </li>
                 <?php
@@ -30,18 +30,18 @@
                 if (isset($_SESSION["code"])) {
                     ?>
                     <li>
-                        <span class="opener">用户管理</span>
+                        <span class="opener">Account management</span>
                         <ul>
-                            <li><a href="#">资料管理</a></li>
-                            <li><a href="editor.php">发布文章</a></li>
-                            <li><a href="#">我的文章</a></li>
-                            <li><a href="inc/account/exit.php">退出登录</a></li>
+                            <li><a href="#">Profile</a></li>
+                            <li><a href="editor.php">Post Article</a></li>
+                            <li><a href="#">My Article</a></li>
+                            <li><a href="inc/account/exit.php">Logout</a></li>
                         </ul>
                     </li>
                     <?php
                 } else {
                     ?>
-                    <li><a href="login.php">登陆</a></li>
+                    <li><a href="login.php">Login</a></li>
                     <?php
                 }
                 ?>
@@ -52,12 +52,12 @@
         <!-- Section -->
         <section>
             <header class="major">
-                <h2>联系</h2>
+                <h2>Get in touch</h2>
             </header>
-            <p>与我们用以下的方式进行交流</p>
+            <p>Get in touch with us in following ways</p>
             <ul class="contact">
                 <li class="icon solid fa-envelope"><a href="mailto:musdatech@gmail.com">musdatech@gmail.com</a></li>
-                <li class="icon solid fa-phone">+86 186 4514 5921</li>
+                <li class="icon solid fa-phone">+1 (646) 707-6558</li>
             </ul>
         </section>
 

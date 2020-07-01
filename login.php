@@ -4,9 +4,9 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html lang="zh-CN">
+<html lang="en">
 <head>
-    <title>登陆 - <?php require_once("template/title.php"); ?></title>
+    <title>Login - <?php require_once("template/title.php"); ?></title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
@@ -29,18 +29,18 @@
             <form id="login" method="post" action="#" onsubmit="return false">
                 <div class="row gtr-uniform">
                     <div class="col-12 col-12-xsmall">
-                        <input type="text" name="account" id="account" value="" placeholder="账户名"/>
+                        <input type="text" name="account" id="account" value="" placeholder="Account"/>
                     </div>
                     <div class="col-12 col-12-xsmall">
-                        <input type="password" name="password" id="password" value="" placeholder="密码"/>
+                        <input type="password" name="password" id="password" value="" placeholder="Password"/>
                     </div>
 
                     <p id="tip_text" style="color:red;"></p>
                     <!-- Break -->
                     <div class="col-12">
                         <ul class="actions">
-                            <li><input type="submit" value="登陆" class="primary" id="submit"/></li>
-                            <li><input type="reset" value="重置"/></li>
+                            <li><input type="submit" value="Login" class="primary" id="submit"/></li>
+                            <li><input type="reset" value="Reset"/></li>
                         </ul>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
 <script src="assets/js/main.js"></script>
 
 <script type="text/javascript">
-    $("#submit").attr('value', '登陆');
+    $("#submit").attr('value', 'Login');
 
     var tip = $('#tip_text');
     tip.text('');
@@ -72,7 +72,7 @@
     $("#submit").click(function () {
 
 
-        $("#submit").val('登陆中');
+        $("#submit").val('Logining');
         //向后台发送处理数据
         $.ajax({
             type: "POST", //用POST方式传输
@@ -82,18 +82,18 @@
             success: function (msg) {
                 if (msg == 1) {
 
-                    $("#submit").val('登陆');
-                    tip.text('账户已被删除');
+                    $("#submit").val('Login');
+                    tip.text('Account is banned');
 
                 } else if (msg == 2) {
 
-                    $("#submit").val('登陆');
-                    tip.text('账户不存在');
+                    $("#submit").val('Login');
+                    tip.text('Account non-existent');
 
                 } else if (msg == 3) {
 
-                    $("#submit").val('登陆');
-                    tip.text('密码错误');
+                    $("#submit").val('Login');
+                    tip.text('Password wrong');
 
                 } else if (msg == 0) {
 
