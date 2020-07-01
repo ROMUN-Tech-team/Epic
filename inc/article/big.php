@@ -43,7 +43,7 @@ while ($row = mysqli_fetch_array($result)) {
                 echo "English";
             }; ?></p>
         <ul class="actions">
-            <li><a href="news/<?php echo $dbid; ?>.html" class="button big">More</a></li>
+            <li><a href="article.php?id=<?php echo $dbid; ?>" class="button big">More</a></li>
         </ul>
     </div>
     <span class="image object">
