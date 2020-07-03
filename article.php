@@ -6,7 +6,6 @@
 -->
 <html lang="en">
 <?php
-require_once("template/header.php");
 
 session_start();
 include("inc/config.php");
@@ -51,7 +50,7 @@ while ($row = mysqli_fetch_array($result)) {
         <div class="inner">
 
             <!-- Header -->
-
+            <?php require_once("template/header.php"); ?>
 
             <section>
                 <header class="main">
