@@ -6,7 +6,7 @@
 -->
 <html lang="en">
 <head>
-    <title>Editor - <?php require_once("template/title.php"); ?></title>
+    <title>编辑器 - <?php require_once("template/title.php"); ?></title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
@@ -30,19 +30,19 @@
             <br><br>
 
 
-            <h3>Editor</h3>
+            <h3>编辑器</h3>
 
 
             <form method="post" action="#" id="form" onsubmit="return enter()">
                 <div class="row gtr-uniform">
                     <div class="col-6 col-12-xsmall">
-                        <input type="text" name="title" id="title" value="" placeholder="Title"/>
+                        <input type="text" name="title" id="title" value="" placeholder="标题"/>
                     </div>
                     <div class="col-6 col-12-xsmall">
-                        <input type="text" name="subtitle" id="subtitle" value="" placeholder="Subtitle"/>
+                        <input type="text" name="subtitle" id="subtitle" value="" placeholder="副标题"/>
                     </div>
                     <div class="col-12 col-12-xsmall">
-                        <textarea name="summary" id="summary" value="" placeholder="Summary" rows="3"></textarea>
+                        <textarea name="summary" id="summary" value="" placeholder="总结" rows="3"></textarea>
                     </div>
 
                     <!-- Break -->
@@ -50,8 +50,8 @@
 
                     <div class="col-12">
                         <select name="lang" id="lang">
-                            <option value="">- Language -</option>
-                            <option value="CN">Chinese</option>
+                            <option value="">- 语言 -</option>
+                            <option value="CN">中文</option>
                             <option value="EN">English</option>
                         </select>
                     </div>
@@ -66,7 +66,7 @@
                     <p id="tip_text" style="color:red;"></p>
                     <div class="col-12">
                         <ul class="actions">
-                            <li><input type="submit" value="Post" class="primary" id="submit"/></li>
+                            <li><input type="submit" value="发布" class="primary" id="submit"/></li>
                         </ul>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
 <script type="text/javascript">
 
 
-    $("#submit").attr('value', 'Post');
+    $("#submit").attr('value', '发布');
 
     var tip = $('#tip_text');
     tip.text('');
@@ -106,32 +106,32 @@
 
 
         if (title.length == 0) {
-            alert("Please filled the title");
+            alert("请输入标题");
             return false;
         }
 
         if (subtitle.length == 0) {
-            alert("Please filled the subtitle");
+            alert("请输入副标题");
             return false;
         }
 
         if (summary.length == 0) {
-            alert("Please filled the summary");
+            alert("请输入总结");
             return false;
         }
 
         if (lang.length == 0) {
-            alert("Please choose the language");
+            alert("请选择语言");
             return false;
         }
 
         if (article.length == 0) {
-            alert("Please filled the article");
+            alert("请输入内容");
             return false;
         }
 
 
-        $("#submit").val('Posting');
+        $("#submit").val('发布中');
         //向后台发送处理数据
         $.ajax({
             type: "POST", //用POST方式传输
@@ -140,17 +140,17 @@
             data: $('#form').serialize(),
             success: function (msg) {
                 if (msg == 1) {
-                    $("#submit").val('Post');
-                    tip.text('Please filled all the content!');
+                    $("#submit").val('发布');
+                    tip.text('请输入所有内容!');
 
                 } else if (msg == 2) {
 
-                    $("#submit").val('Post');
+                    $("#submit").val('发布');
                     window.location.href = 'index.php';
 
                 } else if (msg == 3) {
-                    $("#submit").val('Post');
-                    tip.text('Database is down!');
+                    $("#submit").val('发布');
+                    tip.text('数据库错误!');
 
                 }
             }

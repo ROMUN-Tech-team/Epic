@@ -4,38 +4,29 @@
         <!-- Search -->
         <section id="search" class="alt">
             <form method="post" action="#">
-                <input type="text" name="query" id="query" placeholder="Search"/>
+                <input type="text" name="query" id="query" placeholder="搜索"/>
             </form>
         </section>
 
         <!-- Menu -->
         <nav id="menu">
             <header class="major">
-                <h2>Menu</h2>
+                <h2>菜单</h2>
             </header>
             <ul>
                 <li><a href="index.php">主页</a></li>
-                <li>
-                    <span class="opener">Self Media</span>
-                    <ul>
-                        <li><a href="#">England</a></li>
-                        <li><a href="#">America</a></li>
-                        <li><a href="#">Russia</a></li>
-                        <li><a href="#">China</a></li>
-                    </ul>
-                </li>
                 <?php
                 session_start();
 
                 if (isset($_SESSION["code"])) {
                     ?>
                     <li>
-                        <span class="opener">Account management</span>
+                        <span class="opener">账户管理</span>
                         <ul>
-                            <li><a href="#">Profile</a></li>
-                            <li><a href="editor.php">Post Article</a></li>
-                            <li><a href="#">My Article</a></li>
-                            <li><a href="inc/account/exit.php">Logout</a></li>
+                            <li><a href="#">个人信息</a></li>
+                            <li><a href="editor.php">发布文章</a></li>
+                            <li><a href="#">我发布的文章</a></li>
+                            <li><a href="inc/account/exit.php">登出</a></li>
                         </ul>
                     </li>
                     <?php

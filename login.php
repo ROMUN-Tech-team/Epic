@@ -29,7 +29,7 @@
             <form id="login" method="post" action="#" onsubmit="return false">
                 <div class="row gtr-uniform">
                     <div class="col-12 col-12-xsmall">
-                        <input type="text" name="account" id="account" value="" placeholder="Aster id"/>
+                        <input type="text" name="account" id="account" value="" placeholder="Aster ID"/>
                     </div>
                     <div class="col-12 col-12-xsmall">
                         <input type="password" name="password" id="password" value="" placeholder="密码"/>
@@ -39,7 +39,7 @@
                     <!-- Break -->
                     <div class="col-12">
                         <ul class="actions">
-                            <li><input type="submit" value="Login" class="primary" id="submit"/></li>
+                            <li><input type="submit" value="登录" class="primary" id="submit"/></li>
                             <li><input type="reset" value="Reset"/></li>
                         </ul>
                     </div>
@@ -63,7 +63,7 @@
 <script src="assets/js/main.js"></script>
 
 <script type="text/javascript">
-    $("#submit").attr('value', 'Login');
+    $("#submit").attr('value', '登录');
 
     var tip = $('#tip_text');
     tip.text('');
@@ -72,7 +72,7 @@
     $("#submit").click(function () {
 
 
-        $("#submit").val('Logining');
+        $("#submit").val('登录中');
         //向后台发送处理数据
         $.ajax({
             type: "POST", //用POST方式传输
@@ -82,18 +82,18 @@
             success: function (msg) {
                 if (msg == 1) {
 
-                    $("#submit").val('Login');
-                    tip.text('Account is banned');
+                    $("#submit").val('登录');
+                    tip.text('账户已被禁用');
 
                 } else if (msg == 2) {
 
-                    $("#submit").val('Login');
-                    tip.text('Account non-existent');
+                    $("#submit").val('登录');
+                    tip.text('账户不存在');
 
                 } else if (msg == 3) {
 
-                    $("#submit").val('Login');
-                    tip.text('Password wrong');
+                    $("#submit").val('登录');
+                    tip.text('密码错误');
 
                 } else if (msg == 0) {
 
