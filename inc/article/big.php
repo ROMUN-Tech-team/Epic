@@ -24,6 +24,7 @@ while ($row = mysqli_fetch_array($result)) {
     $dbsummary = $row["summary"];
     $dbarticle = $row["article"];
     $dblang = $row["lang"];
+    $dbcover = $row["cover"];
 }
 
 
@@ -47,6 +48,6 @@ while ($row = mysqli_fetch_array($result)) {
         </ul>
     </div>
     <span class="image object">
-        <img src="images/pic10.jpg" alt=""/>
+        <img src="<?php echo $dbcover ?>" alt=""/>
     </span>
 </section>

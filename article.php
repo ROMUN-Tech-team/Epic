@@ -23,6 +23,7 @@ while ($row = mysqli_fetch_array($result)) {
     $dbsummary = $row["summary"];
     $dbarticle = $row["article"];
     $dblang = $row["lang"];
+    $dbcover = $row["cover"];
 
     if ($dblang == "CN") {
         $dblang = "中文";
@@ -57,6 +58,8 @@ while ($row = mysqli_fetch_array($result)) {
                     <h1><?php echo $dbtitle ?></h1>
                     <p>阅读量：<?php echo $dbcount ?></p>
                 </header>
+
+                <span class="image main"><img src="<?php echo $dbcover ?>" alt=""/></span>
 
                 <?php echo $dbarticle ?>
 

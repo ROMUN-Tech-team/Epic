@@ -16,6 +16,7 @@ $subtitle = $_REQUEST["subtitle"];
 $summary = $_REQUEST["summary"];
 $article = $_REQUEST["article"];
 $lang = $_REQUEST["lang"];
+$cover = $_REQUEST["cover"];
 
 
 $result1 = mysqli_query($con, "select * from user where account ='{$account}';");
@@ -26,7 +27,7 @@ while ($row = mysqli_fetch_array($result1)) {
 }
 
 
-$result2 = mysqli_query($con, "insert into article (title, subtitle, summary, article, com, lang) values('{$title}', '{$subtitle}', '{$summary}', '{$article}', '{$dbcom}', '{$lang}');");
+$result2 = mysqli_query($con, "insert into article (title, subtitle, summary, article, com, lang, cover) values('{$title}', '{$subtitle}', '{$summary}', '{$article}', '{$dbcom}', '{$lang}', '{$cover}');");
 
 echo 2;
 

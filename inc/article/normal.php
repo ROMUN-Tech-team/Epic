@@ -37,6 +37,7 @@ $result = mysqli_query($con, "select * from article order by count DESC LIMIT 10
             $dbsummary = $row["summary"];
             $dbarticle = $row["article"];
             $dblang = $row["lang"];
+            $dbcover = $row["cover"];
 
             if ($dblang == "CN") {
                 $dblang = "中文";
@@ -47,7 +48,7 @@ $result = mysqli_query($con, "select * from article order by count DESC LIMIT 10
             echo <<<EOF
 
         <article>
-            <a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+            <a href="#" class="image"><img src="{$dbcover}" alt="" /></a>
             <h3>{$dbtitle}</h3>
             <p>{$dbsummary}</p>
             <p>语言：{$dblang}</p>

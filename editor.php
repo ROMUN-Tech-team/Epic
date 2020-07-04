@@ -42,8 +42,13 @@
                         <input type="text" name="subtitle" id="subtitle" value="" placeholder="副标题"/>
                     </div>
                     <div class="col-12 col-12-xsmall">
-                        <textarea name="summary" id="summary" value="" placeholder="总结" rows="3"></textarea>
+                        <textarea name="summary" id="summary" placeholder="总结" rows="3"></textarea>
                     </div>
+                    <div class="col-12 col-12-xsmall">
+                        <textarea name="cover" id="cover" placeholder="封面图片" rows="1"></textarea>
+                        <p>您可以将图片上传至 <a href="https://imgchr.com">图床</a></p>
+                    </div>
+
 
                     <!-- Break -->
 
@@ -103,6 +108,7 @@
         var summary = document.getElementById("summary").value;
         var lang = document.getElementById("lang").value;
         var article = document.getElementById("article").value;
+        var cover = document.getElementById("cover").value;
 
 
         if (title.length == 0) {
