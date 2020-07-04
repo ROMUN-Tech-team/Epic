@@ -92,6 +92,7 @@
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/HandyEditor.min.js"></script>
 
 <script type="text/javascript">
 
@@ -101,8 +102,12 @@
     var tip = $('#tip_text');
     tip.text('');
 
+    var he = HE.getEditor('article');
+
     function enter() {
 
+
+        he.sync()
         var title = document.getElementById("title").value;//获取form中的用户名
         var subtitle = document.getElementById("subtitle").value;
         var summary = document.getElementById("summary").value;
