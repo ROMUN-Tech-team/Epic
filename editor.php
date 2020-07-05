@@ -135,7 +135,7 @@
             type: "POST", //用POST方式传输
             dataType: "text", //数据格式:JSON
             url: 'inc/article/cache.php', //目标地址
-            data: 'article=' + article,
+            data: 'article=' + encodeURIComponent(article),
             success: function (msg) {
                 if (msg == 1) {
 
@@ -225,6 +225,7 @@
             type: 'get', //请求方式
             // 如果获取成功
             success: function (data) {
+                data = decodeURIComponent(data);
                 //成功时返回的data值
                 he.set(data);
             },

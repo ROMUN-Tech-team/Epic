@@ -28,6 +28,7 @@ while ($row = mysqli_fetch_array($result1)) {
 
 
 $result2 = mysqli_query($con, "insert into article (title, subtitle, summary, article, com, lang, cover) values('{$title}', '{$subtitle}', '{$summary}', '{$article}', '{$dbcom}', '{$lang}', '{$cover}');");
+mysqli_query($con, "UPDATE cache SET article = '' WHERE asterid = '{$account}'");
 
 echo 2;
 

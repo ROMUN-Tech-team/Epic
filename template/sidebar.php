@@ -25,7 +25,7 @@
                         <ul>
                             <li><a href="#">个人信息</a></li>
                             <li><a href="editor.php">发布文章</a></li>
-                            <li><a href="#">我发布的文章</a></li>
+                            <li><a href="my_article.php">我发布的文章</a></li>
                             <li><a href="inc/account/exit.php">登出</a></li>
                         </ul>
                     </li>
