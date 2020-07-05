@@ -71,8 +71,14 @@
 
                     <!-- Break -->
                     <div class="col-12">
-                        <textarea name="article" id="article" placeholder="" rows="10"></textarea>
+                        <textarea name="article" id="article" rows="10"></textarea>
+
+                        <ul class="actions">
+                            <li><input type="submit" value="存储" class="button" id="save"/></li>
+                        </ul>
+
                     </div>
+
                     <!-- Break -->
 
                     <p id="tip_text" style="color:red;"></p>
@@ -103,18 +109,54 @@
 
 <script type="text/javascript">
 
+    var he = HE.getEditor('article', {
+        autoHeight: true,
+        autoFloat: false,
+        topOffset: 0,
+    });
+
+
+
 
     $("#submit").attr('value', '发布');
 
     var tip = $('#tip_text');
     tip.text('');
 
-    var he = HE.getEditor('article');
+    //缓存内容
+    $("#save").click(function () {
+
+        he.sync();
+        var article = document.getElementById("article").value;
+
+        $("#save").val('存储中');
+        //向后台发送处理数据
+        $.ajax({
+            type: "POST", //用POST方式传输
+            dataType: "text", //数据格式:JSON
+            url: 'inc/article/cache.php', //目标地址
+            data: 'article=' + article,
+            success: function (msg) {
+                if (msg == 1) {
+
+                    $("#save").val('存储');
+                    tip.text('存储成功');
+                    return false;
+
+                } else if (msg == 2) {
+
+                    $("#save").val('存储');
+                    tip.text('存储错误');
+
+                }
+            }
+        });
+    });
 
     function enter() {
 
 
-        he.sync()
+        he.sync();
         var title = document.getElementById("title").value;//获取form中的用户名
         var subtitle = document.getElementById("subtitle").value;
         var summary = document.getElementById("summary").value;
@@ -176,6 +218,23 @@
 
         return false;
     }
+
+    $(document).ready(function () {
+        $.ajax({
+            url: 'inc/article/get_cache.php', //接口链接
+            type: 'get', //请求方式
+            // 如果获取成功
+            success: function (data) {
+                //成功时返回的data值
+                he.set(data);
+            },
+            // 如果获取失败
+            error: function (err) {
+                console.log(err)
+            }
+        });
+    });
+
 </script>
 
 
