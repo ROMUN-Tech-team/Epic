@@ -59,11 +59,36 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>Item1</td>
-                        <td>Ante turpis integer aliquet porttitor.</td>
-                        <td>29.99</td>
-                    </tr>
+                    <?php
+
+                    session_start();
+
+                    $com = $_SESSION["com"];
+
+                    include("inc/config.php");
+
+                    $result = mysqli_query($con, "select * from article where com ='{$com}';");
+                    while ($row = mysqli_fetch_array($result)) {
+                        $dbid = $row["id"];
+                        $dbtitle = $row["title"];
+                        $dbcount = $row["count"];
+
+                        echo <<<EOF
+                        
+                        <tr>
+                        <td>$dbid</td>
+                        <td><a href="article.php?id=$dbid">$dbtitle</a></td>
+                        <td>$dbcount</td>
+                        <td></td>
+                        
+</tr>
+
+EOF;
+
+
+                    }
+
+                    ?>
                     </tbody>
                 </table>
             </div>
