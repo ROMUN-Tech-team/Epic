@@ -41,7 +41,12 @@
         <div class="inner">
 
             <!-- Header -->
-            <?php require_once("template/header.php"); ?>
+            <?php
+
+            require_once("template/header.php");
+            require_once("inc/account/verify.php");
+
+            ?>
 
             <br><br>
 
@@ -79,7 +84,7 @@
                         <td>$dbid</td>
                         <td><a href="article.php?id=$dbid">$dbtitle</a></td>
                         <td>$dbcount</td>
-                        <td></td>
+                        <td><a href="inc/article/delete_article.php?id=$dbid">删除</a></td>
                         
 </tr>
 
