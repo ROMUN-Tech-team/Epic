@@ -11,6 +11,18 @@ session_start();
 include("inc/config.php");
 $id = $_REQUEST["id"];
 
+if ($id == "") {
+    echo <<<EOF
+
+<script type="text/javascript">
+        alert("参数错误");
+        window.location.href = "/index.php";
+</script>
+
+EOF;
+
+}
+
 
 $result = mysqli_query($con, "select * from article WHERE id = '{$id}';");
 mysqli_query($con, "UPDATE article SET count = count + 1 WHERE id = '{$id}';");
