@@ -15,7 +15,7 @@ if ($id == "") {
     echo <<<EOF
 
 <script type="text/javascript">
-        alert("参数错误");
+        alert("未指定文章，请求参数错误，请返回主页");
         window.location.href = "/index.php";
 </script>
 
