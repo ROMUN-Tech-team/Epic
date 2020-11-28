@@ -68,11 +68,11 @@
 
                     session_start();
 
-                    $com = $_SESSION["com"];
+                    $account = $_SESSION["account"];
 
                     include("inc/config.php");
 
-                    $result = mysqli_query($con, "select * from article where com ='{$com}';");
+                    $result = mysqli_query($con, "select * from article where account ='{$account}';");
                     while ($row = mysqli_fetch_array($result)) {
                         $dbid = $row["id"];
                         $dbtitle = $row["title"];

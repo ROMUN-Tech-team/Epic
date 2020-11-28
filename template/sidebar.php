@@ -47,8 +47,8 @@
             </header>
             <p>用一下几种方式联系我们</p>
             <ul class="contact">
-                <li class="icon solid fa-envelope"><a href="mailto"></a></li>
-                <li class="icon solid fa-phone">+1 (646) 707-</li>
+                <li class="icon solid fa-envelope"><a href="mailto:musdatech@gmail.com">Email</a></li>
+                <li class="icon solid fa-phone">+1 (646) 707-6558</li>
             </ul>
         </section>
 

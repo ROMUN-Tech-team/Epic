@@ -1,4 +1,4 @@
-<?php require "/var/www/epic/inc/session.php" ?>
+<?php //require "/var/www/epic/inc/session.php" ?>
 <header id="header">
     <a href="index.php" class="logo"><strong>Epic</strong> 媒体中心</a>
     <ul class="icons">

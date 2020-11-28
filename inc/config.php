@@ -1,5 +1,5 @@
 <?php
 
-$con = mysqli_connect("192.168.123.94", "root", "hailmusda", "epic", "3306");
+$con = mysqli_connect("150.129.80.109", "root", "Hailmusda666", "mediacenter", "3306");
 
 mysqli_query($con, "set names 'utf8'");

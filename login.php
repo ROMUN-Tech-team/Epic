@@ -87,12 +87,12 @@
             url: 'inc/account/login.php', //目标地址
             data: $('#login').serialize(),
             success: function (msg) {
-                if (msg == 1) {
+                if (msg == 2) {
 
                     $("#submit").val('登录');
                     tip.text('账户已被禁用');
 
-                } else if (msg == 2) {
+                } else if (msg == 1) {
 
                     $("#submit").val('登录');
                     tip.text('账户不存在');

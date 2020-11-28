@@ -21,7 +21,7 @@ $account = $_SESSION["account"];
 $article = $_REQUEST["article"];
 
 
-$stmt = mysqli_prepare($con, "UPDATE cache SET article = ? where asterid = '{$account}'");
+$stmt = mysqli_prepare($con, "UPDATE cache SET article = ? where account = '{$account}'");
 $stmt->bind_param('s', $article);
 $stmt->execute();
 

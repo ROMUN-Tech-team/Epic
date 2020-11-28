@@ -17,7 +17,7 @@ if (!$con) {
     die('数据库连接失败' . mysqli_error($con));
 }
 
-$result = mysqli_query($con, "select * from cache where asterid = '{$account}'");
+$result = mysqli_query($con, "select * from cache where account = '{$account}'");
 while ($row = mysqli_fetch_array($result)) {
     $cache = $row["article"];
 }

@@ -27,6 +27,17 @@ while ($row = mysqli_fetch_array($result)) {
     $dbcover = $row["cover"];
 }
 
+$result1 = mysqli_query($con, "select * from article WHERE count > 10000 LIMIT 1;");
+while ($row = mysqli_fetch_array($result1)) {
+    $dbid = $row["id"];
+    $dbcount = $row["count"];
+    $dbtitle = $row["title"];
+    $dbsubtitle = $row["subtitle"];
+    $dbsummary = $row["summary"];
+    $dbarticle = $row["article"];
+    $dblang = $row["lang"];
+    $dbcover = $row["cover"];
+}
 
 ?>
 
@@ -48,6 +59,6 @@ while ($row = mysqli_fetch_array($result)) {
         </ul>
     </div>
     <span class="image object">
-        <img src="<?php echo $dbcover ?>" alt=""/>
+        <img src="<?php echo $dbcover ?>" alt="" />
     </span>
 </section>

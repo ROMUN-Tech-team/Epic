@@ -15,7 +15,7 @@ $id = $_REQUEST["id"];
 
 include("../config.php");
 
-mysqli_query($con, "DELETE FROM article WHERE id = {$id}");
+//mysqli_query($con, "DELETE FROM article WHERE id = {$id}");
 
 echo <<<EOF
 

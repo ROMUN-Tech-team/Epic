@@ -15,7 +15,7 @@ $dbarticle = null;
 $dblang = null;
 
 
-$result = mysqli_query($con, "select * from article order by count DESC LIMIT 10;");
+$result = mysqli_query($con, "select * from article order by count desc;");
 
 
 ?>
@@ -38,6 +38,7 @@ $result = mysqli_query($con, "select * from article order by count DESC LIMIT 10
             $dbarticle = $row["article"];
             $dblang = $row["lang"];
             $dbcover = $row["cover"];
+            $dbdate = $row["date"];
 
             if ($dblang == "CN") {
                 $dblang = "中文";
@@ -52,6 +53,7 @@ $result = mysqli_query($con, "select * from article order by count DESC LIMIT 10
             <h3>{$dbtitle}</h3>
             <p>{$dbsummary}</p>
             <p>语言：{$dblang}</p>
+            <p>发稿时间：{$dbdate}</p>
             <ul class="actions">
                 <li><a href="article.php?id={$dbid}" class="button">More</a></li>
             </ul>
